@@ -1,8 +1,10 @@
 package com.cun.java.searchFind;
 
 public class BinarySearch {
-	private static int binarySearch(int[] arr, int low, int high, int target) {
-	    int mid = 0;
+	private static int binarySearch(int[] arr, int target) {
+		if (arr == null || arr.length == 0)
+			return -1;
+	    int mid = 0, low=0, high=arr.length;
 	    while (low <= high) {
 	        mid = (low + high) >> 1;
 	        if(arr[mid] == target){
@@ -14,6 +16,6 @@ public class BinarySearch {
 	            low = mid + 1;
 	        }
 	    }
-	    return low;
+	    return -1;//not found
 	}
 }

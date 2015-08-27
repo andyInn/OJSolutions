@@ -7,7 +7,7 @@ public class QuickSort {
 	/**
 	 * 此为递归排序
 	 * 空间复杂度在最坏情况下为O(n),平均情况下为O(logn)，以2为底。
-	 * 快排的时间复杂度为O(nlogn)，以2为底。
+	 * 快排的时间复杂度为O(nlogn)，以2为底，不稳定。
 	 * 快速排序是所有内部排序算法中平均性能最优的排序算法。
 	 * @param arr
 	 * @param low

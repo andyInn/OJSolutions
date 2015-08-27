@@ -22,7 +22,7 @@ public class HeapSort {
 			adjustDown(arr, i, len);						//从i=(len>>1)开始,反复调整堆
 	}
 	
-	public void adjustDown(int[] arr, int k, int len) {		//将元素arr[k]向下进行调整
+	public void adjustDown(int[] arr, int k, int len) {		//将元素arr[k]向下进行调整，下标1~len保存了堆的数据，arr[0]为哨兵
 		arr[0] = arr[k];									//arr[0]暂存调整的这个元素
 		for(int i=(k<<1);i<=len;i=(i<<1)){
 			if(i<len && arr[i]<arr[i+1]) i++;				//取得孩子中较大者的下标
@@ -39,6 +39,8 @@ public class HeapSort {
 	 * @param len
 	 */
 	public void heapSort(int[] arr, int len) {
+		if (arr == null || arr.length == 0)
+			return;
 		buildMaxHeap(arr, len);								//初始建堆
 		for(int i=len;i>1;i--){								//对所有1~len范围的数据——结点值进行排序,只剩一个结点时当然不用排序～
 			arr[i]=arr[i]^arr[1];							//此处交换arr[1]和arr[i]的值
