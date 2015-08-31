@@ -1,6 +1,6 @@
 package leetcodeOJ;
 
-public class _92ReverseLinkedList_II  {
+public class _092ReverseLinkedList_II  {
 	public static ListNode reverseBetween(ListNode head, int m, int n) {
 		if (n == m)
 			return head;

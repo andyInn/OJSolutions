@@ -1,6 +1,6 @@
 package com.google.codejampractise;
+
 import java.util.*;
-import java.io.*;
 
 public class A
 {

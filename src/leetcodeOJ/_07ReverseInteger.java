@@ -1,6 +1,6 @@
 package leetcodeOJ;
 
-public class _7ReverseInteger {
+public class _07ReverseInteger {
 	public static int reverse(int x) {
 		if (x >= 0 && x <= 9)
 			return x;

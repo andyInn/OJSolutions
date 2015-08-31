@@ -2,7 +2,7 @@ package leetcodeOJ;
 
 import java.util.Arrays;
 
-public class _66PlusOne {
+public class _066PlusOne {
 	public static int[] plusOne(int[] digits) {
         int len=digits.length, i=0;
 		for (i = len - 1; i >= 0; i--) {

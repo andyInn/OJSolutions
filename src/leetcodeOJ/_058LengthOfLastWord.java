@@ -1,6 +1,6 @@
 package leetcodeOJ;
 
-public class _58LengthOfLastWord {
+public class _058LengthOfLastWord {
 	public static int lengthOfLastWord(String s) {
 		if (s == null || s.length() == 0 || s.equals(" ")) {
 			return 0;
