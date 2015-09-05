@@ -42,9 +42,9 @@ public class TestBinaryTree {
 		
 		Vector<Character> path = new Vector<Character>();
 		RecursiveTraversal rt = new RecursiveTraversal();
-		rt.PreOrder(tree, path); System.out.println("RecursiveTraversal PreOrder:"+path); path.clear();
-		rt.InOrder(tree, path); System.out.println("RecursiveTraversal InOrder:"+path); path.clear();
-		rt.PostOrder(tree, path); System.out.println("RecursiveTraversal PostOrder:"+path); path.clear();
+		rt.preOrder(tree, path); System.out.println("RecursiveTraversal PreOrder:"+path); path.clear();
+		rt.inOrder(tree, path); System.out.println("RecursiveTraversal InOrder:"+path); path.clear();
+		rt.postOrder(tree, path); System.out.println("RecursiveTraversal PostOrder:"+path); path.clear();
 		
 		NonrecursiveTraversal nrt = new NonrecursiveTraversal();
 		nrt.PreOrder(tree, path); System.out.println("NonrecursiveTraversal PreOrder:"+path); path.clear();

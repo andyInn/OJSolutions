@@ -4,7 +4,7 @@ public class BinarySearch {
 	private static int binarySearch(int[] arr, int target) {
 		if (arr == null || arr.length == 0)
 			return -1;
-	    int mid = 0, low=0, high=arr.length;
+		int mid = 0, low = 0, high = arr.length - 1;
 	    while (low <= high) {
 	        mid = (low + high) >> 1;
 	        if(arr[mid] == target){
