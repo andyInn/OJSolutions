@@ -44,12 +44,12 @@ public class _203RemoveLinkedListElements {
 	}
 
   //Definition for singly-linked list.
-  	public static class ListNode {
-  		int val;
-  		ListNode next;
-
-  		ListNode(int x) {
-  			val = x;
-  		}
-  	}
+//  	public static class ListNode {
+//  		int val;
+//  		ListNode next;
+//
+//  		ListNode(int x) {
+//  			val = x;
+//  		}
+//  	}
 }

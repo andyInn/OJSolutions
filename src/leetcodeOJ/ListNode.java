@@ -9,7 +9,7 @@ public class ListNode {
 		next = null;
 	}
 	
-	public static void main(String[] args){
+/*	public static void main(String[] args){
 		ListNode head = new ListNode(1);
 		ListNode n1 = new ListNode(2);
 		ListNode n2 = new ListNode(3);
@@ -19,5 +19,5 @@ public class ListNode {
 		n1.next = n2;
 		n2.next = n3;
 		n3.next = n4;
-	}
+	}*/
 }

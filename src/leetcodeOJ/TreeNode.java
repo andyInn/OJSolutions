@@ -10,7 +10,7 @@ public class TreeNode {
 		val = x;
 	}
 	
-	public static void main(String ...strings){
+	/*public static void main(String ...strings){
 		TreeNode root=new TreeNode(0);
 		TreeNode p1=new TreeNode(1);
 		TreeNode p2=new TreeNode(2);
@@ -35,5 +35,5 @@ public class TreeNode {
 		p6.right=null;
 		p7.left=null;
 		p7.right=null;
-	}
+	}*/
 }

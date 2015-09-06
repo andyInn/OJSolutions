@@ -75,15 +75,15 @@ public class _002AddTwoNumbers {
 		return len1 > len2 ? l1 : l2;
 	}
 
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-	}
+//	public static class ListNode {
+//		int val;
+//		ListNode next;
+//
+//		ListNode(int x) {
+//			val = x;
+//			next = null;
+//		}
+//	}
 	
 	public ListNode _addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode ret = new ListNode(0);
