@@ -19,6 +19,9 @@ $RECYCLE.BIN/
 
 #useless projects files
 *.class
+*.txt
+*.in
+*.out
 
 # =========================
 # Operating System Files
@@ -44,3 +47,4 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+src/leetcodeOJ/_126WordLadderII.java
