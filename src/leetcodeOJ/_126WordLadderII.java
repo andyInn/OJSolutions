@@ -12,6 +12,6 @@ public class _126WordLadderII {
 
 	public static void main(String... strings) {
 		int[] nums = { 4, 5, 6, 7, 1, 2, 3 };
-		System.out.println();
+		System.out.println(new java.text.DecimalFormat("#.00").format(3.1455926));
 	}
 }

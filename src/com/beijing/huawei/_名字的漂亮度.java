@@ -1,4 +1,4 @@
-package com.huawei;
+package com.beijing.huawei;
 
 import java.util.ArrayList;
 import java.util.Collections;
