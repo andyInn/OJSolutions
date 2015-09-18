@@ -14,6 +14,8 @@ public class QuickSort {
 	 * @param high
 	 */
 	public static void quickSort(long[] arr,int low,int high) {
+		if(arr==null||arr.length<=1)
+			return;
 		if(low<high){
 			int pos=partition(arr, low, high);
 			quickSort(arr, low, pos-1);
@@ -42,11 +44,13 @@ public class QuickSort {
 	 * @param high
 	 */
 	public static void quickSort2(long[] arr, int low, int high){
+		if(arr==null||arr.length<2)
+			return;
 		Stack<Integer> s=new Stack<Integer>();
 		if(low<high){
-			int pivot=0;
 			s.push(low);
 			s.push(high);
+			int pivot=0;
 			while (!s.empty()) {
 				int right = s.pop();
 				int left = s.pop();
@@ -68,5 +72,8 @@ public class QuickSort {
 		//QuickSort.quickSort(arr,0,7);
 		QuickSort.quickSort2(arr,0,7);
 		System.out.println(Arrays.toString(arr));
+//		System.out.println(Math.sin((45f /180f)*Math.PI));
+//		System.out.println(Math.sin(Math.toRadians(90)));
+//		System.out.println(Math.atan2(y, x));
 	}
 }
