@@ -30,6 +30,24 @@ public class ReverseLinkedList {
 		return N;
 	}
 	
+/*	public static void reverse2(LNode N){
+		if(N==null||N.next==null)//单链表为空或单链表只有一个元素，不进行逆置操作
+			return ;
+		LNode p=N.next,q=p.next;//令p指向线性表中的第2个元素
+		N.next=null;//摘掉第二个元素及其后面的所有元素
+		while(p!=null){
+			q=p.next;//暂存p后面的元素，防止单链表断裂
+			p.next=N;
+			N=p;
+			p=q;//继续访问下一个元素
+		}
+//		LNode pp = N;
+//		while (pp != null) {
+//			System.out.println(pp.data);
+//			pp = pp.next;
+//		}
+	}*/
+	
 	public static void main(String[] args){
 		ReverseLinkedList rll=new ReverseLinkedList();
 		LNode n=rll.new LNode(0);
@@ -40,9 +58,11 @@ public class ReverseLinkedList {
 		n1.next=n2;
 		n2.next=n3;
 		LNode p=reverse(n);
-		while(p!=null){
+//		reverse2(n);
+//		LNode p = n;
+		while (p != null) {
 			System.out.println(p.data);
-			p=p.next;
+			p = p.next;
 		}
 	}
 }
