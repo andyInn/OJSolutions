@@ -21,7 +21,7 @@ public class HeapSort2 {
 	
 	public static void adjustDown(int[] arr, int k, int len) {	//将元素arr[k]向下进行调整，下标1~len保存了堆的数据，arr[0]为哨兵
 		int pivot = arr[k];										//arr[0]暂存调整的这个元素
-		for(int i=(k<<1);i<len;i=(i<<1)){
+		for(int i=(k<<1);i<len;i<<=1){
 			if(i+1<len && arr[i]<arr[i+1]) i++;					//取得孩子中较大者的下标
 			if(pivot>=arr[i]) break;
 			arr[k]=arr[i]; k = i;								//将arr[i]调整到双亲的结点上；修改k值，继续向下筛选

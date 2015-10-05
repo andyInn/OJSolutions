@@ -14,7 +14,7 @@ public class QuickSort {
 	 * @param high
 	 */
 	public static void quickSort(long[] arr,int low,int high) {
-		if(arr==null||arr.length<=1)
+		if(arr==null||arr.length<2)
 			return;
 		if(low<high){
 			int pos=partition(arr, low, high);

@@ -12,7 +12,7 @@ public class _191Number_of_1_Bits {
 	}
 
 	public int hammingWeight(int n) {
-		int sum = 0, i = 0, temp = 0;
+		int sum = 0, i = 0;
 		while (i < 32) {
 			int bit = n & 1;
 			if (bit == 1)

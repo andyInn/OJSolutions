@@ -67,7 +67,7 @@ public class _167TwoSumII {
 		while (numbers[right] > target) right--;
 		while (left < right) {
 			int tmp = target - numbers[right];
-			int ans;
+			int ans=0;
 			if (tmp == numbers[left]) {		//即两数和等于于target
 				result[0] = left + 1;
 				result[1] = right + 1;

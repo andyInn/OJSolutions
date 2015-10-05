@@ -8,12 +8,12 @@ import java.util.Queue;
  * @author Andy
  *
  */
-public class Test{
+public class _严格交替打印数据{
 	public static int state=1;
 	public Queue<Integer> q;
 	public static Queue<Integer> qNew = new LinkedList<Integer>();
 	
-	public Test(Queue<Integer> q){
+	public _严格交替打印数据(Queue<Integer> q){
 		this.q=q;
 	}
 	
@@ -24,7 +24,7 @@ public class Test{
 		q.offer(3);
 		q.offer(4);
 		q.offer(5);
-		final Test t=new Test(q);
+		final _严格交替打印数据 t=new _严格交替打印数据(q);
 		
 		new Thread(new Runnable() {
 			@Override

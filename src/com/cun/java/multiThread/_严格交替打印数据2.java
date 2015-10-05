@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * @author Andy
  *
  */
-public class Test2{
+public class _严格交替打印数据2{
 	public static void main(String ...strings){
 		Queue<Integer> q=new LinkedList<Integer>();
 		Queue<Integer> qNew = new LinkedList<Integer>();
@@ -23,18 +23,32 @@ public class Test2{
 		q.offer(5);
 		TwoThread tt=new TwoThread();
 		tt.q=q;
+		
+		Thread t1=new Thread(new Thread1(tt));
+		Thread t2=new Thread(new Thread2(tt));
+		t1.start();
+		t2.start();
+		/*
+		//法一：
+		Thread t1=new Thread(new Thread1(tt));
+		Thread t2=new Thread(new Thread2(tt));
+		t1.start();
+		t2.start();*/
+		/*
+		//法二：
 		Thread1 t1=new Thread1(tt);
 		Thread2 t2=new Thread2(tt);
 		ExecutorService exe=Executors.newCachedThreadPool();
 		exe.execute(t1);
 		exe.execute(t2);
 		exe.shutdown();
-//		try {
-//			TimeUnit.SECONDS.sleep(2);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
-		while(!exe.isTerminated());
+		try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		while(!exe.isTerminated());*/
+		while(!tt.q.isEmpty());
 		qNew=TwoThread.qNew;
 		int i = 0;
 		while (qNew.peek() != null) {
