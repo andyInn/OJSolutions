@@ -25,11 +25,11 @@ public class _最长递增子序列LongestIncreasedSubSequence {
 		
 		int nMaxLis = 1;
 		for (int i = 1; i < arr.length; i++) {
-			if(arr[i]>arr[lissArr[nMaxLis-1]]){//优先处理两种特殊情况
+			if(arr[i]>arr[lissArr[nMaxLis-1]]){//优先处理两种特殊情况,arr[i]比最大元素还大
 				preArr[i] = lissArr[nMaxLis-1];//更新前驱值
 				lissArr[nMaxLis++] = i;//更新当前最长子序列的最大元素最小值
 				continue;
-			}else if(arr[i]<arr[lissArr[0]]){
+			}else if(arr[i]<arr[lissArr[0]]){//arr[i]比最小元素还小
 				lissArr[0] = i;//更新当前最长子序列的最大元素最小值
 				continue;
 			}else {//arr[i]一定在当前最长递增子序列之中
@@ -38,13 +38,13 @@ public class _最长递增子序列LongestIncreasedSubSequence {
 				while (left <= right) {// B-Search
 					mid = (right + left) >> 1;
 					if (arr[i] == arr[lissArr[mid]]) {
-						break;
+						break;//这里不更新最小值，因为取下标最小的
 					}else if (arr[lissArr[mid]] < arr[i]) {
 						left = mid + 1;
 					} else {
 						if(left==right){
-							preArr[i] = lissArr[right-1];//更新前驱值
-							lissArr[right] = i;//更新当前最长子序列的最大元素最小值
+							preArr[i] = lissArr[right-1];//更新前驱值，这里易错！
+							lissArr[right] = i;//更新当前最长子序列的最大元素最小下标值
 							break;
 						}
 						right = mid - 1;
