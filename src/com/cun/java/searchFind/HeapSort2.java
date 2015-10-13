@@ -39,7 +39,7 @@ public class HeapSort2 {
 		if (arr == null || arr.length == 0)
 			return;
 		buildMaxHeap(arr);										//初始建堆
-		for(int i=arr.length-1;i>0;i--){								//对所有1~len-1范围的数据——结点值进行排序,只剩一个结点时当然不用排序～
+		for(int i=arr.length-1;i>0;i--){						//对所有1~len-1范围的数据——结点值进行排序,只剩一个结点时当然不用排序～
 			arr[i]=arr[i]^arr[0];								//此处交换arr[1]和arr[i]的值
 			arr[0]=arr[i]^arr[0];								//此时arr[1]保存的arr[i]的值
 			arr[i]=arr[i]^arr[0];								//此时arr[i]保存的arr[1]的值
