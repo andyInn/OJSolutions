@@ -48,7 +48,7 @@ public class _严格交替打印数据2{
 			e.printStackTrace();
 		}
 		while(!exe.isTerminated());*/
-		while(!tt.q.isEmpty());
+		while(!tt.q.isEmpty());//等待线程执行完毕
 		qNew=TwoThread.qNew;
 		int i = 0;
 		while (qNew.peek() != null) {
