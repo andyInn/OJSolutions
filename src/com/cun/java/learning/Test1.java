@@ -8,6 +8,10 @@ import java.util.Map;
 import java.util.Scanner;
 
 public abstract class Test1 {
+//	private final int val1;
+	private void get() {
+		
+	}
 	public static void main(String[] args) {
 		Object o=new Object();
 		System.out.println(o.toString());

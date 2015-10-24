@@ -99,17 +99,17 @@ public class NonrecursiveTraversal {
 	 * @param root
 	 * @return
 	 */
-	public <T> TreeNode<Character> _BuildBinaryTree(List<Character> list1, List<Character> list2, TreeNode<Character> root) {
+	public <T> TreeNode<Character> _BuildBinaryTree(List<Character> list1, List<Character> list2) {
 		//这里只举例通过前序和中序序列来构造出原树root，中序和后序来建立二叉树完全一样，改下后序序列的顺序，就可以应用本算法了，就是找root嘛～
 		if(list1.isEmpty()||list2.isEmpty()) return null;
-		int len1=list1.size(),len2=list2.size(),curIndex1=0,curIndex2=0;
+		int curIndex1=0,curIndex2=0;
 		char ch=list1.get(curIndex1);
 		curIndex2 = list2.indexOf(ch);
-		while (curIndex2 == -1 && curIndex1 < len1) //一定能找到list2结点序列所表示子树的根～
+		while (curIndex2 == -1 && curIndex1 + 1 < list1.size()) //一定能找到list2结点序列所表示子树的根～
 			curIndex2 = list2.indexOf(ch = list1.get(++curIndex1));
-		root = new TreeNode<Character>(ch);
-		root.left = BuildBinaryTree(list1.subList(curIndex1 + 1, len1), list2.subList(0, curIndex2), root.left);
-		root.right = BuildBinaryTree(list1.subList(curIndex1 + 1, len1), list2.subList(curIndex2+1, len2), root.right);
+		TreeNode<Character> root = new TreeNode<Character>(ch);
+		root.left = _BuildBinaryTree(list1.subList(curIndex1 + 1, list1.size()), list2.subList(0, curIndex2));
+		root.right = _BuildBinaryTree(list1.subList(curIndex1 + 1, list1.size()), list2.subList(curIndex2+1, list2.size()));
 		return root;
 	}
 	
@@ -121,24 +121,24 @@ public class NonrecursiveTraversal {
 	 * @param root
 	 * @return
 	 */
-	public <T> TreeNode<Character> BuildBinaryTree(List<Character> list1, List<Character> list2, TreeNode<Character> root) {
+	public <T> TreeNode<Character> BuildBinaryTree(List<Character> list1, List<Character> list2) {
 		//这里只举例通过前序和中序序列来构造出原树root，中序和后序来建立二叉树完全一样，改下后序序列的顺序，就可以应用本算法了，就是找root嘛～
 		if(list1.isEmpty()||list2.isEmpty()) return null;
-		int len1=list1.size(),len2=list2.size(),curIndex1=0,curIndex2=0;
+		int curIndex1=0,curIndex2=0;
 		System.err.println(list1);
 		System.err.println(list2);
 		char ch=list1.get(curIndex1);
 		curIndex2 = list2.indexOf(ch);
-		while (curIndex2 == -1 && curIndex1 < len1)//一定能找到list2结点序列所表示子树的根～
+		while (curIndex2 == -1 && curIndex1 < list1.size())//一定能找到list2结点序列所表示子树的根～
 			curIndex2 = list2.indexOf(ch = list1.get(++curIndex1));
-		root = new TreeNode<Character>(ch);
+		TreeNode<Character> root = new TreeNode<Character>(ch);
 		System.out.println("当前根节点是："+root.val);
 		System.out.println("left");
-		root.left = BuildBinaryTree(list1.subList(curIndex1 + 1, len1), list2.subList(0, curIndex2), root.left);
+		root.left = BuildBinaryTree(list1.subList(curIndex1 + 1, list1.size()), list2.subList(0, curIndex2));
 		if(root.left != null) System.out.println(root.val+"的左孩子是："+root.left.val);
 		else System.out.println(root.val+"的左孩子是：null");
 		System.out.println("right");
-		root.right = BuildBinaryTree(list1.subList(curIndex1 + 1, len1), list2.subList(curIndex2+1, len2), root.right);
+		root.right = BuildBinaryTree(list1.subList(curIndex1 + 1, list1.size()), list2.subList(curIndex2+1, list2.size()));
 		if(root.right != null) System.out.println(root.val+"的右孩子是："+root.right.val);
 		else System.out.println(root.val+"的右孩子是：null");
 		return root;

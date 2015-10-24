@@ -40,6 +40,7 @@ enum EnumSingleton{
 }
 /**
  * 三、静态内部类 优点：加载时不会初始化静态变量INSTANCE，因为没有主动使用，达到Lazy loading
+ * 大神推荐这个方法征服面试官,线程安全+单例保证+Lazy loading
  */
 class InternalSingleton{
     private static class SingletonHolder{
