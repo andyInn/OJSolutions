@@ -20,6 +20,11 @@ package com.cun.practice;
  *
  */
 public class DP_MaxSubsequenceSum{
+	/**
+	 * 本方法看着比较复杂，处理的不利索
+	 * @param arr
+	 * @return
+	 */
 	public static int maxSubsequenceSum(int arr[]) {
 		int thisSum, maxSum;
 		boolean isAllNegative=true;
@@ -56,8 +61,8 @@ public class DP_MaxSubsequenceSum{
 		int len = arr.length;
 		int thisSum = arr[len - 1], maxSum = arr[len - 1];
 		for (int i = len - 2; i >= 0; i--) {
-			thisSum = max(arr[i], thisSum + arr[i]);
-			maxSum = max(thisSum, maxSum);
+			thisSum = Math.max(arr[i], thisSum + arr[i]);
+			maxSum = Math.max(thisSum, maxSum);
 		}
 		return maxSum;
 	}
@@ -70,16 +75,12 @@ public class DP_MaxSubsequenceSum{
 	public static int maxSubsequenceSum3(int arr[]) {
 		int thisSum = arr[0], maxSum = arr[0];
 		for (int i = 1; i < arr.length; i++) {
-			thisSum = max(arr[i], thisSum + arr[i]);
-			maxSum = max(thisSum, maxSum);
+			thisSum = Math.max(arr[i], thisSum + arr[i]);
+			maxSum = Math.max(thisSum, maxSum);
 		}
 		return maxSum;
 	}
 
-	public static int max(int x, int y) {
-		return (x > y) ? x : y;
-	}
-	
 	public static void main(String[] args) throws Exception {
 //		int[] arr={1,1,1,0,-2,5,5,-3};
 		int[] arr={-1,-2,-3};
