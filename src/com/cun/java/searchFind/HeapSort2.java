@@ -36,7 +36,7 @@ public class HeapSort2 {
 	 * @param len
 	 */
 	public static void heapSort(int[] arr) {
-		if (arr == null || arr.length == 0)
+		if (arr == null || arr.length < 2)
 			return;
 		buildMaxHeap(arr);										//初始建堆
 		for(int i=arr.length-1;i>0;i--){						//对所有1~len-1范围的数据——结点值进行排序,只剩一个结点时当然不用排序～

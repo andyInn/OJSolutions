@@ -43,25 +43,26 @@ public class QuickSort {
 	 * @param low
 	 * @param high
 	 */
-	public static void quickSort2(long[] arr, int low, int high){
+	public static void quickSort2(long[] arr){
 		if(arr==null||arr.length<2)
 			return;
+		int low=0, high=arr.length-1;
 		Stack<Integer> s=new Stack<Integer>();
 		if(low<high){
 			s.push(low);
 			s.push(high);
-			int pivot=0;
+			int pos=0;
 			while (!s.empty()) {
-				int right = s.pop();
-				int left = s.pop();
-				pivot = partition(arr, left, right);
-				if (left < pivot - 1) {
-					s.push(left);
-					s.push(pivot - 1);
+				high = s.pop();
+				low = s.pop();
+				pos = partition(arr, low, high);
+				if (low < pos - 1) {
+					s.push(low);
+					s.push(pos - 1);
 				}
-				if (right > pivot + 1) {
-					s.push(pivot + 1);
-					s.push(right);
+				if (high > pos + 1) {
+					s.push(pos + 1);
+					s.push(high);
 				}
 			}//while
 		}
@@ -70,7 +71,7 @@ public class QuickSort {
 	public static void main(String[] args){
 		long[] arr={4,2,6,7,9,5,1,3};
 		//QuickSort.quickSort(arr,0,7);
-		QuickSort.quickSort2(arr,0,7);
+		QuickSort.quickSort2(arr);
 		System.out.println(Arrays.toString(arr));
 //		System.out.println(Math.sin((45f /180f)*Math.PI));
 //		System.out.println(Math.sin(Math.toRadians(90)));

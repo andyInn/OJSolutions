@@ -1,6 +1,11 @@
 package com.cun.java.searchFind;
 
 public class BinarySearch {
+	/**
+	 * @param arr
+	 * @param target
+	 * @return 找到的元素下标
+	 */
 	private static int binarySearch(int[] arr, int target) {
 		if (arr == null || arr.length == 0)
 			return -1;
