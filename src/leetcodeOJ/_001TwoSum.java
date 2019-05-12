@@ -10,13 +10,12 @@ public class _001TwoSum {
 		int len = numbers.length;
 		int[] result = new int[2];
 		for (int i = 0; i < len; i++) {
-			result[1] = i + 1;
-			int last = target - numbers[i];
-			if (m.containsKey(last)) {
-				result[0] = m.get(last);
+			result[1] = i;
+			if (m.containsKey(target - numbers[i])) {
+				result[0] = m.get(target - numbers[i]);
 				break;
 			}
-			m.put(numbers[i], i + 1);
+			m.put(numbers[i], i);
 		}
 		return result;
 	}
