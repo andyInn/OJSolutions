@@ -1,10 +1,7 @@
 package com.cun.java.tree;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
-import java.util.Vector;
+import java.util.*;
+
 //先序和中序都容易理解，关键是后序
 //顺便说一句，删除一棵二叉树，即释放一棵二叉树的内存，用后序遍历即可实现（这里的"访问"变成了delete 结点）。  
 public class NonrecursiveTraversal {
@@ -23,6 +20,28 @@ public class NonrecursiveTraversal {
 				p = p.right;
 			}
 		}//while
+	}
+
+	/**
+	 * 中序遍历另一种方式
+	 * @param root
+	 * @return
+	 */
+	public List<Integer> inorderTraversal_suggested(leetcodeOJ.TreeNode root) {
+		List<Integer> list = new ArrayList<>();
+		Stack<leetcodeOJ.TreeNode> stack = new Stack<>();
+		leetcodeOJ.TreeNode cur = root;
+		while (cur != null || !stack.isEmpty()) {
+			if (cur != null) {
+				stack.push(cur);
+				cur = cur.left;
+			} else {
+				cur = stack.pop();
+				list.add(cur.val);
+				cur = cur.right;
+			}
+		}
+		return list;
 	}
 
 	public <T> void InOrder(TreeNode<T> root, Vector<T> path) {
